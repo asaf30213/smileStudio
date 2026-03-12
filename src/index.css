@@ -900,3 +900,118 @@ footer {
 .fade-up-2 { animation-delay: 0.25s; opacity: 0; }
 .fade-up-3 { animation-delay: 0.4s; opacity: 0; }
 .fade-up-4 { animation-delay: 0.55s; opacity: 0; }
+
+/* ═══ HAMBURGER ═══ */
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 4px;
+}
+.nav-hamburger span {
+  display: block;
+  width: 22px;
+  height: 1.5px;
+  background: var(--charcoal);
+  transition: all 0.25s;
+}
+.nav-hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.nav-hamburger.open span:nth-child(2) { opacity: 0; }
+.nav-hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+.nav-mobile-menu { display: none; }
+
+/* ═══ RESPONSIVE ═══ */
+@media (max-width: 768px) {
+  /* Navbar */
+  nav { padding: 16px 20px !important; }
+  .nav-links { display: none !important; }
+  .nav-hamburger { display: flex !important; }
+  .nav-mobile-menu {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 57px;
+    left: 0; right: 0;
+    background: rgba(247,249,251,0.98);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 24px;
+    gap: 20px;
+    list-style: none;
+    z-index: 99;
+  }
+  .nav-mobile-menu a {
+    text-decoration: none;
+    font-size: 0.9rem;
+    color: var(--mid);
+    letter-spacing: 0.06em;
+  }
+  .nav-mobile-menu .nav-cta {
+    background: var(--charcoal);
+    color: var(--cream) !important;
+    padding: 10px 22px;
+    border-radius: 2px;
+    display: inline-block;
+    font-size: 0.8rem !important;
+    text-align: center;
+  }
+
+  /* Hero */
+  .hero { grid-template-columns: 1fr !important; min-height: auto !important; }
+  .hero-left { padding: 40px 20px 48px !important; }
+  .hero-title { font-size: 3rem !important; }
+  .hero-right { height: 280px; }
+  .hero-stats { gap: 24px !important; flex-wrap: wrap !important; margin-top: 40px !important; }
+  .hero-badge { right: 16px; bottom: 16px; }
+
+  /* TrustBar */
+  .trust-bar {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 10px !important;
+    padding: 16px 20px !important;
+    justify-items: start !important;
+  }
+
+  /* Services */
+  .services { padding: 64px 20px !important; }
+  .section-header { flex-direction: column !important; align-items: flex-start !important; gap: 16px !important; margin-bottom: 40px !important; }
+  .services-bento { display: flex !important; flex-direction: column !important; gap: 3px !important; background: none !important; border: none !important; }
+  .svc-card { padding: 28px 24px 32px !important; border: 1px solid var(--border) !important; }
+  .svc-card.big { min-height: auto !important; }
+  .svc-empty { display: none !important; }
+
+  /* Gallery */
+  .gallery { padding: 64px 0 !important; }
+  .gallery-inner { padding: 0 20px !important; }
+  .gallery-scroll { grid-template-columns: repeat(2, 1fr) !important; padding: 0 20px !important; gap: 12px !important; }
+
+  /* Team */
+  .team { padding: 64px 20px !important; }
+  .team-grid { grid-template-columns: 1fr !important; gap: 40px !important; margin-top: 40px !important; }
+  .doctors-row { gap: 12px !important; }
+
+  /* Testimonials */
+  .testimonials { padding: 64px 20px !important; }
+  .reviews-grid { grid-template-columns: 1fr !important; margin-top: 40px !important; }
+  .review-card { padding: 28px 24px !important; }
+
+  /* Booking */
+  .booking { grid-template-columns: 1fr !important; padding: 64px 20px !important; gap: 40px !important; }
+  .booking-copy h2 { font-size: 2.4rem !important; }
+  .form-row { grid-template-columns: 1fr !important; }
+  .booking-form { padding: 28px 20px !important; }
+
+  /* Footer */
+  footer { padding: 40px 20px 24px !important; }
+  .footer-top { flex-direction: column !important; align-items: flex-start !important; gap: 20px !important; }
+  .footer-links { flex-wrap: wrap !important; gap: 16px !important; }
+  .footer-bottom { flex-direction: column !important; gap: 8px !important; }
+
+  /* Global */
+  .section-title { font-size: 2.2rem !important; }
+}
